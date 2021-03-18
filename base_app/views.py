@@ -26,6 +26,8 @@ class CreateRoomView(APIView):
             host = self.request.session.session_key
 
             queryset = Room.objects.filter(host=host)
+            if int(votes_to_skip) > int(max_people) or not room_name or int(max_people) > 15:
+                return Response('{}', status=status.HTTP_406_NOT_ACCEPTABLE)
             if queryset:
                 room = queryset[0]
                 room.guest_can_pause = guest_can_pause

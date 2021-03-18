@@ -26,10 +26,13 @@ const AppRouter = () => {
             <h1>Page not found</h1>
             <Link to="/">Go home</Link>
           </Route>
-
+          <Route>
+            <h1>Page not found</h1>
+            <Link to="/">Go home</Link>
+          </Route>
           {/* Redirecciona a 404 entrando a cualquier página que no esté declarada
            en el router o los urls.py */}
-          <Redirect to="/404" />
+          {/*<Redirect to="/404" />*/}
         </Switch>
       </Router>
     </div>
