@@ -6,7 +6,7 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
-import { LandingPage, CreateRoomPage, JoinRoomPage } from "./pages";
+import { LandingPage, CreateRoomPage, JoinRoomPage, Room } from "./pages";
 
 const AppRouter = () => {
   /* 
@@ -22,6 +22,7 @@ const AppRouter = () => {
           <Route exact path="/" component={LandingPage} />
           <Route path="/join" component={JoinRoomPage} />
           <Route path="/create" component={CreateRoomPage} />
+          <Route path="/room/:roomCode" component={Room} />
           <Route path="/404">
             <h1>Page not found</h1>
             <Link to="/">Go home</Link>
